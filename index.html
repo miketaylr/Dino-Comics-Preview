@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta http-equiv="preview-refresh" content="43200">
+<title>Dino Comics</title>
+<canvas width="239" height="243" id="c"></canvas>
+<style>
+  @media screen and (view-mode: minimized) {
+    canvas {
+      -o-transform:translate(0, -5px);
+      margin:0 auto;display:block;
+    }
+  }
+</style>
+<script>
+  var xhr = new XMLHttpRequest(),
+      ctx = document.getElementById('c').getContext('2d'),
+      url, dummy = document.createElement('div');
+  
+  function findURL(response){
+    dummy.innerHTML = response;
+    url = /http.+png/.exec(dummy.querySelector('img').style.backgroundImage);
+    createImg(url);
+  }
+  
+  function createImg(url){
+    var img = new Image();
+    img.onload = function(){
+      ctx.drawImage(img,-3,-2);
+    };
+    img.src = url;
+  }
+      
+  xhr.open('GET', 'http://www.qwantz.com/index.php?mobile=1?cachebust='+Math.floor(Math.random()*100000000), true);
+  xhr.onreadystatechange = function(){
+    if (xhr.readyState == 4 && xhr.status == 200){
+      findURL(xhr.responseText);
+    } else {
+      createImg('rawr.gif');
+    }
+  };
+  xhr.send();
+</script>
