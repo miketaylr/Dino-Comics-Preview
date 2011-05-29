@@ -7,8 +7,19 @@
 <style>
   @media screen and (view-mode: minimized) {
     canvas {position:absolute;left:-999px;top:-999px;}
-    img {margin:0 auto;display:block;width: 100%;-o-transform:translate(0, -5px);}
+    img {margin:0 auto;width: 239px;display:block;-o-transform:translate(0, -5px);-o-object-fit:contain;}
   }
+
+  /* Scaling down smaller than 100% of the original image*/
+  @media screen and (max-width: 238px) {
+    img {width: 100%;}
+  }
+  
+  /* Scaling up past 130% or so */
+  @media screen and (min-width: 350px) {
+    img {width: 100%;}
+  }
+  
 </style>
 <script>
   var xhr = new XMLHttpRequest(),
