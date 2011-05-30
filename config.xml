@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<widget xmlns="http://www.w3.org/ns/widgets" version="1.2" id="http://miketaylr.com/" defaultlocale="en" viewmodes="minimized">
+<widget xmlns="http://www.w3.org/ns/widgets" version="1.3" id="http://miketaylr.com/" defaultlocale="en" viewmodes="minimized">
   <name short="Dino Comics">Dino Comics Preview</name>
   <description>See the first panel of the most recent Dino Comics. Click through to read the rest!</description>
   <access origin="http://www.qwantz.com" subdomains="true" />
